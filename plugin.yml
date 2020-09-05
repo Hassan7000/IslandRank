@@ -1,0 +1,5 @@
+version: 1.0
+name: IslandRank
+main: com.hassan.islandrank.Main
+depend: [PlaceholderAPI, HolographicDisplays, SuperiorSkyblock2]
+ 

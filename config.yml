@@ -1,0 +1,199 @@
+########################
+# Island Rank config section
+###########################
+
+
+IslandRanks:
+ 1: #This will be the name of the rank and it can only be numbers
+   FirstRank: true 
+   Price: 0
+   Next_Rank: '2'
+ 2:
+   Price: 100
+   Token-Price: 0
+   Next_Rank: '3'
+   Commands:
+   - 'eco give {player} 200'
+ 3:
+   Price: 200
+   Token-Price: 1
+   Next_Rank: '4' 
+   Commands:
+   - 'eco give {player} 300'
+ 4:
+   Price: 300
+   Token-Price: 1
+   Next_Rank: '5' 
+   Commands:
+   - 'eco give {player} 400'
+ 5:
+   Price: 400
+   Token-Price: 1
+   Next_Rank: '6' 
+   Commands:
+   - 'eco give {player} 500'
+ 6:
+   Price: 500
+   Token-Price: 1
+   Next_Rank: 'final' #This means that this is the final rank and you can't rankup anymore 
+   Commands:
+   - 'eco give {player} 600'
+
+Leave:
+ Commands:
+ - 'eco give {player} 100'
+
+Join:
+ Commands:
+ - 'eco give {player} 100'
+
+
+
+Messages:
+ RankupMessage: '&e{owner}s &7/is has unlocked Level: {level}'
+ LevelMessage: '&f{target}s &7island level is: &f{level}'
+ BoughtInfoLevel: '&a&lUnlocked'
+ NotBoughtInfoLevel: '&c&lLocked'
+ AlreadyTheInfoLevel: '&a&lYou are currently  on this level'
+ BoughtLevel: '&7You have bought &f{level} &7for &a${price}'
+ BuyRanksInOrder: '&cYou have to buy ranks in order'
+ NotEnoughMoney: "&cYou dont have enough money for this"
+ AlreadyThatRank: '&aYou are already that rank'
+ PlayerDoesNotExist: '&c{target} does not exist'
+ PlayerDoesNotHaveAnIsland: '&cThis player does not have an island'
+ Worth-Message: 'Your island worth: %the island worth placeholder%'
+GuiMaterials:
+ Bought:
+  Material: 'STAINED_GLASS_PANE'
+  Data: 5
+ NotBought:
+  Material: 'STAINED_GLASS_PANE'
+  Data: 14
+
+WhoMessage:
+- '&8&m---------------<&f &d%superior_island_name% &8>&8&m---------------&r'
+- 'Island Level: &e%Islandrank_level%'
+- 'Island Points: &e%superior_island_worth_format%'
+- 'Leader: &e%superior_island_leader%'
+- 'Island Bank: &e%superior_island_bank_format%'
+- 'Members Online (&e%amount_online%): &a{0}'
+- 'Members Offline (&e%amount_offline%): &c{1}'
+- 'Strikes: &e0'
+
+IslandRanksGUIName: '&6&lIsland Ranks'
+IslandRanksSize: 54
+
+IslandRanksGUI:
+ 1: #Make sure you have the same name as the you have or else it will not work so go after your islandranks
+   Name: '&7Level: &f1'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&lFREE'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 100$'
+   - ''
+   - '{infolevel}'
+ 2:
+   Name: '&7Level: &f2'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&l100$'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 200$'
+   - ''
+   - '{infolevel}'
+ 3:
+   Name: '&7Level: &f3'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&l200$'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 300$'
+   - ''
+   - '{infolevel}'
+ 4:
+   Name: '&7Level: &f4'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&l300$'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 400$'
+   - ''
+   - '{infolevel}'
+ 5:
+   Name: '&7Level: &f5'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&l400$'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 500$'
+   - ''
+   - '{infolevel}'
+ 6:
+   Name: '&7Level: &f6'
+   Lore:
+   - ''
+   - '&bCost'
+   - '&a&l500$'
+   - ''
+   - '&a&lLevel Rewards'
+   - '&a* 600$'
+   - ''
+   - '{infolevel}'
+
+
+###################################
+# Island top config section
+##################################
+
+
+IslandTopName: '&a{ranknumber}. &f{islandowner}s &7- &7Level: &f{level} &f{online_members}&7/&f{offline_members} &7online'
+
+IslandMembersFormat: '&f- &7{member_name} - &7({status}&7)' #{status} - will be replaced by online or offline. Look at the islandMemberStatus
+
+IslandClickCommand: '/is warp {islandowner}'
+
+IslandNotFound: '&a{ranknumber}. &7No island'
+
+IslandTop_Footer: '&7---------&8{&6&lIslandTop&8}&7----------'
+IslandTop_Header: '&7---------&8{&6&lIslandTop&8}&7----------'
+
+#The timer is in seconds
+IslandTopTimer: 1
+
+IslandMemberStatus:
+ Online: '&aOnline' 
+ Offline: '&cOffline'
+
+IslandTopHoverFormat:
+- '&7Island Level: &f{level}'
+- ''
+- '&7Island Balance: &f{worth}'
+- ''
+- '&7Diamond Block Count: &f{Diamond_Block}'
+- ''
+- '&7Gold Block Count: &f{Gold_Block}'
+- ''
+- '&7Emerald Block Count: &f{Emerald_Block}'
+- ''
+- '&7Iron Block Count: &f{Iron_Block}'
+- ''
+- '&7Iron Golem Spawner Count: &f{Spawner_IRON_GOLEM}'
+- ''
+- '&7Members:'
+- '{members}'
+
+#Hologram placeholder is %IslandTop_number%
+# Yo
+
+HologramDisplay: '{ranknumber}. {islandowner} - Level: {level} - worth: {worth}'
